@@ -24,7 +24,7 @@ function pyra(base, increment) {
     let sumLapis = 0;
     let stones = 0;
     let sumGold = 0;
-    for (let i = start; i > 0; i -= 2) {
+    for (let i = start; i => 1; i -= 2) {
         Height += 1;
         if ( Height % 5 !== 0&& i>2) {
             allStones = i * i; // size of  i-floor
@@ -33,14 +33,14 @@ function pyra(base, increment) {
             sumMarble += marble; 
             sumStones += stones;
 
-        } else if(Height% 5 === 0) {
+        } else if(Height% 5 === 0&& i>2) {
             allStones = i * i;
             lazuli = (4 * i) - 4;
             stones = allStones - lazuli;
             sumLapis += lazuli;
             sumStones += stones;
         }
-        if (i <= 2 && i >= 0) {
+        if (i <= 2 ) {
             let goldfor = i * i
             gold += goldfor;
             sumGold += gold;
@@ -58,8 +58,9 @@ function pyra(base, increment) {
     console.log(`Gold required: ${Math.ceil(sumGold)}`);
     console.log(`Final pyramid height: ${Math.floor(Height)}`);
 
-} pyra(12,
+} pyra(10,
     1
+    
 );
 /* 
 Input 23,0.5
