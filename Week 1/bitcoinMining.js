@@ -41,7 +41,7 @@ function mining(day) {
   console.log(`Bought bitcoins: ${Math.floor(counterOfBtc)}`);
   }
   if(firstDay!==0){
-    console.log(`Day of the first purchased bitcoin ${firstDay}`);
+    console.log(`Day of the first purchased bitcoin: ${firstDay}`);
   }
   if(moneyLeft!==0){
     console.log(`Left money: ${moneyLeft.toFixed(2)} lv.`);
