@@ -13,9 +13,10 @@ function mining(day) {
   let priceOfBTC = 11949.16;
   let priceOfGold = 67.51;
   let sumGoldInLeva = 0;
-  let dayBouth = 0;
   let counterOfBtc = 0;
   let moneyLeft = 0;
+  let notEnoghMoney = true;
+  let firstDay = 0;
   for (let i = 0; i < days; i++) {
     dayCounter += 1;
     mined = day[index];
@@ -28,11 +29,23 @@ function mining(day) {
     sumGoldInLeva = priceOfGold * sumGold;
     counterOfBtc = sumGoldInLeva / priceOfBTC;
     moneyLeft = sumGoldInLeva % priceOfBTC
-
+    if (sumGoldInLeva >= priceOfBTC) {
+      while (notEnoghMoney === true) {
+        firstDay = i + 1;
+        notEnoghMoney = false;
+      }
+    }
 
   }
-  console.log(dayBouth);
-  console.log(Math.floor(counterOfBtc));
-  console.log(moneyLeft.toFixed(2));
+  if(counterOfBtc!==0){
+  console.log(`Bought bitcoins: ${Math.floor(counterOfBtc)}`);
+  }
+  if(firstDay!==0){
+    console.log(`Day of the first purchased bitcoin ${firstDay}`);
+  }
+  if(moneyLeft!==0){
+    console.log(`Left money: ${moneyLeft.toFixed(2)} lv.`);
+  }
+  
 
-} mining([3124.15, 504.212, 2511.124])
+} mining([100, 200, 300])
