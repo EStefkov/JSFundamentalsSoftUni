@@ -4,7 +4,7 @@ function max(arr) {
     for (let i = 0; i < arr.length; i++) {
         let isBigger= true;
         for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] < arr[j]){
+            if (arr[i] <= arr[j]){
                 isBigger= false;
                 break;
             }
