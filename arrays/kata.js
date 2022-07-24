@@ -7,4 +7,4 @@ function solution(a,b){
         }
     }
     console.log(arr);
-}solution([1,2,2,2,3],[1,2]);
+}solution([1,2,2,2,3],[1]);
