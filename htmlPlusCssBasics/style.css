@@ -1,3 +1,49 @@
  body {
-     background-color: aqua;
+    background-color: aqua;
  }
+
+ h1 {
+    font-size: 25px;
+    color: azure;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+
+ #styleBy {
+    font-size: 25px;
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+ }
+
+ .red {
+    margin: 30px;
+    color: red;
+    border: 1px solid black;
+    font: bold;
+    text-transform: uppercase;
+    background-color: blueviolet;
+    border:none;
+    padding: 5px;
+    border-radius: 7px;
+    letter-spacing: 7px;
+ }
+
+ button {
+    color: aquamarine;
+    font: bold;
+    text-transform: uppercase;
+    background-color: blueviolet;
+    border: none;
+    padding: 5px;
+    border-radius: 7px;
+    letter-spacing: 7px;
+
+ }
+
+ button:hover {
+    background-color: aliceblue;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+ }
+
+ h5#heading.green {}
