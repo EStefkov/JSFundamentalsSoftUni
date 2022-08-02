@@ -26,6 +26,12 @@
     border-radius: 7px;
     letter-spacing: 7px;
  }
+ .red:hover {
+   background-color: aliceblue;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+ }
 
  button {
     color: aquamarine;
