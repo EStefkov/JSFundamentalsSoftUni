@@ -3,6 +3,8 @@ function solve(input) {
     //repeat for each element
     for (let line of input){
         //parse input string
+        // let [name, phone] =line.split(' '); 
+
         let tokens = line.split(' ');
         let name = tokens[0];
         let phone = tokens[1];
