@@ -11,6 +11,9 @@ function solve(input) {
     }
     
     //print result
+    for (let key in phonebook){
+        console.log(`${key} -> ${phonebook[key]}`);
+    }
     console.log(phonebook);
 }
 
