@@ -17,6 +17,9 @@ function solve(input) {
         console.log(`${key} -> ${phonebook[key]}`);
     }
     console.log(phonebook);
+    for (let [name, phone] of Object.entries(phonebook)){
+        console.log(name, phone);
+    }
 }
 
 
