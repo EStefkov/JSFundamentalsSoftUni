@@ -7,6 +7,9 @@ function sortAdressbook(input){
     //vzimame catalog kolekciqta  i izvlichame spisuk na kluchovete i stoinostite kato massiv
    let sorted = Object.entries(catalog);
    //sortirame kato polzvame sort i znaem che a, i b  sa masivi s  kluch i stoinost 
+
+
+   // sorted.sort((a,b) => a[0].localCompare(b[0]));
     sorted.sort((a,b) => {
         //zapazvame gi kato promenlivi
         let nameA =a[0];
