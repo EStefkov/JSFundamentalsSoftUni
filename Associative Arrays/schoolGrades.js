@@ -34,8 +34,7 @@ function schoolgrades(input){
             existing.push(grade);
 
         }
-
-
+        
     }
 
     let sorted = Array.from(students);
