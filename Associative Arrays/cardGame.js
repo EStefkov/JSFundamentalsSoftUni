@@ -30,27 +30,20 @@ function cardGame(arr){
     let players = {};
     
     for (const line of arr) {
-    
         [ name, hand] = line.split(': ')
-    
         hand = hand.split(', ');
-    
         if(!players.hasOwnProperty(name)){
     
             players[name]=[];
     
         }
-
         players[name].push(...hand);
     }
 
     
        Object.keys(players).forEach( key => {
-
         let cardsArr = new Set( players[key]);
-        
         let total =0;
-        
         Array.from(cardsArr).forEach(card => {       
             let elements =  card.split('');        
             let color = elements.pop();       
@@ -58,9 +51,7 @@ function cardGame(arr){
             if(isNaN(cardNum)){
                 cardNum = cards[cardNum];
             }
-        
             total += colors[color] * Number(cardNum);  
-        
         });
         
         console.log(`${key}: ${total}`);
