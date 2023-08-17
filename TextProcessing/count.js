@@ -7,7 +7,7 @@ function solve(text,word){
     while (index != -1 ){
         count++;
 
-        index = text.indexOf(matcher, index+ matcher.length);
+        index = text.indexOf(matcher, index+ 1);
     }
     if(text.startsWith(word)){
         count++;
