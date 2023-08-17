@@ -1,4 +1,6 @@
 function solve(text,word){
+
+    
      let start = text.indexOf(word);
 
      while (start!=-1){
@@ -10,6 +12,9 @@ function solve(text,word){
         
      }
      console.log(text);
+
+     console.log(text.split(word).join('*'.repeat(word.length)));
+
 }
 
 solve('A small sentence small with some words','small');
