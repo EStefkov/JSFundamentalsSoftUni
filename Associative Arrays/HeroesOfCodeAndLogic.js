@@ -66,7 +66,7 @@ while(input[0] != 'End'){
 }
 
 //sort heroes
-let sorted = Object.entries(heroes).sort(compareHeroes);
+let sorted = Object.entries(heroes).filter(([name, {hp, mp}]) => hp >0 ).sort(compareHeroes);
 
 //print result
 for (const hero of sorted) {
