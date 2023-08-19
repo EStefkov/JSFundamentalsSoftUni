@@ -24,15 +24,21 @@ let actions = {
     } ,
     Reacharge:(heroes, [name, mpAmp]) => {
         let hero = heroes[name];   
-        hero.mp+= Math.min(hero.mp +Number(mpAmp), 200);  
+        mpAmp = Number(mpAmp);
+        if (hero.mp + mpAmp > 200){
+            mpAmp = 200 - hero.mp;
+        }
+        hero.mp = mpAmp;
+        //hero.mp+= Math.min(hero.mp +Number(mpAmp), 200);  
         console.log(`${name} recharge mana for ${mpAmp}! `);
     } ,
     Heal: (heroes, [name,hpAmp]) => {
         let hero = heroes[name];
-        hero.hp+= Number(hpAmp);
-        if(hero.hp >100){
-            hero.hp = 100;
+        hpAmp = Number(hpAmp);
+        if(hero.hp + hpAmp >100){
+            hpAmp = 100 - hero.hp;
         }
+        hero.hp +=hpAmp;
         console.log(`${name} healed for ${hpAmp} HP!`);
     }
 };    
@@ -58,9 +64,25 @@ while(input[0] != 'End'){
     let action= actions[command];
     action(heroes,args)
 }
-//console.log(action(heroes,args));
+
 //sort heroes
+let sorted = Object.entries(heroes).sort(compareHeroes);
+
 //print result
+for (const hero of sorted) {
+    console.log(hero[0]);
+    console.log(`  HP: ${hero[1].hp}`);
+    console.log(`  MP: ${hero[1].mp}`);
+}
+function compareHeroes (a,b){
+    let heroA = a[1];
+    let heroB = b[1];
+    let result =  heroB.hp - heroA.hp;
+    if(result == 0){
+        result = a[0].localCompare(b[0]);
+    }
+    return result;
+};
 
 }
 
