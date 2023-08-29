@@ -8,9 +8,9 @@
 <body>
     <h1> CATALOG</h1>
     <ul>
-    <li><a href="/catalog/123">Product 123</a></li>
-    <li><a href="/catalog/456">Product 456</a></li>
-    <li><a href="/catalog/789">Product 789</a></li>
+        {{#each products}}
+    <li><a href="/catalog/{{this}}">Product 123{{this}}</a></li>
+   {{/each}}
     
     </ul>
     

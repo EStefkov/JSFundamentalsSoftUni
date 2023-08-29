@@ -1,10 +1,11 @@
 const express = require('express');
-const handlebars = require('express-handlebars');
+const handlebar = require('express-handlebars');
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
-app.engine('hbs', handlebars());
+app.engine('hbs', handlebar());
 app.set('view engine', 'hbs');
 
 app.get('/', function (req, res){
@@ -12,14 +13,10 @@ app.get('/', function (req, res){
 })
 
 app.get('/catalog', (req,res) => {
-    res.render('catalog', { layout:false} );
+    res.render('catalog', { layout:false, products} );
 })
 app.get('/catalog/:serial_number', (req,res) => {
-    let  products = [
-        '123',
-        '456',
-        '789'
-    ];
+    let  products = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
     
     let sn = req.params.serial_number;
 
